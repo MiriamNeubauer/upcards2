@@ -1,0 +1,41 @@
+For this short week, you'll be working on a mini-project alongside short lectures (HAML/SASS, D3, etc).
+
+Requirements:
+
+One new technology (this can be anything from a new library, a gem that we didn't teach you about, an API that you've never used
+Make use of Javascript Templates
+If you haven't used or aren't comfortable with single-page web apps, utilize that in this project.
+If you were in the group that learned Backbone last week, challenge yourself to incorporate it in this project.
+This has to be a web app.
+Tests, duh.
+Projects will be due at 4pm on Wednesday. You'll be presenting science-fair style.
+
+Progress:
+MONDAY
+- installed devise gem
+- installed carrierwave gem (new)
+- styling
+- ajax for one uploaded image (not working)
+
+TUESDAY
+- Twilio MMS, new number
+TODO: create logout button, make pagination, responsiveness, bootstrap, linkedin api, checkbox for onlinkedin, put templates forlder back in and require it in application.js
+kyle says that the problem is that the image does not get saved so that no url is created that can be returned instead of the photo data hash stuff
+-figaro gem
+- problem with carrierwave: browser security: does not give you the real url but fakepath/imgname so you cannot display it, only if it is on the web (or at least we did not know a hack around it --> maybe kyle knows hac around that sp that i do not havr to drop loca file upload??)
+
+do i need a model for bizcard-collection that belongs to user? or is it ok that an indiv bizcard belongs to a user?
+- use at least one haml-view file or hamlc-jst template!
+- make ti work on safari
+- in bash type: (in the Installs directory): ./ngrok -authtoken _AiyDstxHZKcobXDqK9S 3000
+- error I had: in my ajax I said "on any button that you push Do this..." so I had to specify the button better that I only wanted this to happen on the upload-the bizcard-button via a css selector
+-it cannot track the user id somehow
+- it does not know if the crrent user is the one where the mms comes from because the user does not have a phone number initially
+
+WEDNESDAY
+
+
+   (0.1ms)  begin transaction
+  SQL (37.0ms)  INSERT INTO "bizcards" ("avatar", "company", "created_at", "firstname", "img", "lastname", "onlinkedin", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["avatar", "_MG_8510.JPG"], ["company", "movimento"], ["created_at", Wed, 27 Nov 2013 00:00:35 UTC +00:00], ["firstname", "miriam"], ["img", nil], ["lastname", "neubauer"], ["onlinkedin", nil], ["role", nil], ["updated_at", Wed, 27 Nov 2013 00:00:35 UTC +00:00]]
+   (537.4ms)  commit transaction
+Completed 201 Created in 1918ms (Views: 1.0ms | ActiveRecord: 574.7ms)

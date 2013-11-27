@@ -1,0 +1,73 @@
+<h1>Upcards</h1>
+
+<div class="main">
+
+<div class="left">
+  <p>Hi <%= @email %>, </p>
+
+  Upload your business cards here and now!
+
+
+  <!-- //upload button wiht carrierwave -->
+
+  <%= form_for @bizcard, :html => {:multipart => true} do |f| %>
+    <%= f.hidden_field :id %>
+    <p>
+      <%= f.label :firstname %><br />
+      <%= f.text_field :firstname %>
+    </p>
+    <p>
+      <%= f.label :lastname %><br />
+      <%= f.text_field :lastname %>
+    </p>
+    <p>
+      <%= f.label :company %><br />
+      <%= f.text_field :company %>
+    </p>
+    <p>
+      <%= f.file_field :avatar %>
+    </p>
+    <div id="upload_button">
+    <p><%= f.submit %></p>
+    </div>
+  <% end %>
+
+  <!--   <#%= f.error_messages %> -->
+
+  <!-- Filter the uploaded bizcards -->
+  <br>
+  <p> Filter Bizcards by: </p>
+  <select>
+    <option>Company</option>
+    <option>Role</option>
+    <option>Name</option>
+    <option>OnLinkedIn</option>
+  </select>
+  <br>
+
+</div>
+
+<!-- oder brauche ich hier for each do?? -->
+<div class="right">
+  <h2>Uploaded Bizcards</h2>
+<!--   <#% for bizcard in @bizcard.all %> -->
+    <div class="bizcard">
+      <%= image_tag @bizcard.avatar_url(:thumb) if @bizcard.avatar? %>
+      <div class="bizcard-text">
+      <%= @bizcard.firstname %>
+      <%= @bizcard.lastname %>
+      <%= @bizcard.company %>
+      </div>
+    </div>
+<!--       <div class="actions">
+        <#%= link_to "edit", edit_bizcard_path(bizcard) %> |
+        <#%= link_to "remove", bizcard, :confirm => "Are you sure?", :method => :delete %>
+      </div>
+  <#% end %> -->
+</div>
+
+</div> <!-- //end for div class main -->
+
+
+
+

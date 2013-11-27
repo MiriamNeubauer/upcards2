@@ -1,0 +1,29 @@
+.header {
+    position: static;
+    width: 100%;
+    }
+.main {
+    margin: 0px auto;
+    width: 800px;
+    }
+
+.left {
+  width: 150px;
+  float:left;
+}
+
+.right {
+  width: 550px;
+  float:right;
+}
+
+.bizcard {
+  float:left;
+  width: 250px;
+  height: 350px;
+}
+
+.bizcard-text {
+  width: 250px;
+  height: 80px;
+}
